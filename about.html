@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About - Tengku Mardhiah Library</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+    }
+    .center-box {
+  width: 90%;
+  max-width: 800px;
+  margin: 40px auto 80px; /* top: 40px, sides: auto, bottom: 60px */
+  text-align: justify;
+  line-height: 1.7;
+  color: #333;
+}
+    .center-box h1 {
+      text-align: center;
+      color: #800020;
+      margin-bottom: 20px;
+    }
+    .top-controls {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      display: flex;
+      gap: 10px;
+      z-index: 1000;
+    }
+    .toggle-mode,
+    .back-btn {
+      background-color: #800020;
+      color: #fff;
+      border: none;
+      padding: 10px 14px;
+      border-radius: 8px;
+      font-size: 18px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    .toggle-mode:hover,
+    .back-btn:hover {
+      background-color: #333;
+    }
+    .vision-mission-container {
+      max-width: 1100px;
+      margin: 40px auto;
+      display: flex;
+      gap: 40px;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      padding: 0 20px;
+    }
+.vision {
+  flex: 1 1 45%;
+  text-align: center;
+}
+.mission {
+  flex: 1 1 45%;
+  text-align: center;
+}
+    .vision h2,
+    .mission h2 {
+      color: #800020;
+      text-align: center;
+    }
+    .mission ol {
+      padding-left: 20px;
+    }
+    .mission li {
+      margin-bottom: 12px;
+    }
+    @media (max-width: 768px) {
+      .vision-mission-container {
+        flex-direction: column;
+      }
+      .vision, .mission {
+        flex: 1 1 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="top-controls">
+    <button class="back-btn" onclick="history.back()" title="Go Back">⬅</button>
+  </div>
+  <div class="center-box">
+    <h1>About Us</h1>
+    <p style="text-align: center;">
+      Tengku Mardhiah Library is a research and reference library focused on preserving Malaysia’s rich history. 
+      Named after Tengku Mardhiah, a strong supporter of culture and education, the library holds historical documents, 
+      rare books, oral histories, and manuscripts that reflect the nation’s journey.
+      <br><br>
+      Located in the heart of Terengganu, it supports researchers, students, and the public in exploring Malaysia’s story—from its early days to independence and beyond. 
+      The library offers both physical and digital collections covering topics like indigenous culture, colonial history, and heritage preservation.
+      <br><br>
+      More than a collection of books, it is also a learning hub that hosts exhibitions, talks, cultural events, and research activities.
+    </p>
+  </div>
+  <div class="vision-mission-container">
+    <div class="vision">
+      <h2>Vision</h2>
+      <p>
+        To be the leading center for the preservation, exploration, and celebration of Malaysia’s historical heritage, 
+        inspiring future generations through knowledge, culture, and identity.
+      </p>
+    </div>
+    <div class="mission">
+      <h2>Mission</h2>
+      <ol>
+        <li><strong>Preserve and Document:</strong> Collect, archive, and safeguard historical materials that reflect Malaysia’s diverse past.</li>
+        <li><strong>Educate and Inspire:</strong> Provide access to quality resources that foster historical awareness and critical thinking.</li>
+        <li><strong>Promote Cultural Heritage:</strong> Highlight and celebrate Malaysia’s richness through exhibitions and outreach.</li>
+        <li><strong>Support Research:</strong> Facilitate academic work with specialized collections and expert assistance.</li>
+        <li><strong>Engage Communities:</strong> Serve as an inclusive space for learning, dialogue, and unity.</li>
+      </ol>
+    </div>
+  </div>
+</body>
+</html>

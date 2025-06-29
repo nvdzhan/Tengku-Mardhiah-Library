@@ -1,0 +1,227 @@
+<DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Program & Event - Tengku Mardhiah Library</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+    }
+
+    .top-controls {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      display: flex;
+      gap: 10px;
+      z-index: 1000;
+    }
+
+    .back-btn {
+      background-color: #800020;
+      color: #fff;
+      border: none;
+      padding: 10px 14px;
+      border-radius: 8px;
+      font-size: 18px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .back-btn:hover {
+      background-color: #333;
+    }
+
+    h1.title {
+      text-align: center;
+      color: #800020;
+      margin-top: 100px;
+    }
+
+    p.description {
+      text-align: center;
+      font-size: 18px;
+      margin-bottom: 60px; /* Increased gap here */
+    }
+
+    .slideshow-container {
+      max-width: 700px;
+      position: relative;
+      margin: 0 auto 50px;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    }
+
+    .mySlides {
+      display: none;
+    }
+
+    .mySlides img {
+      width: 50%;
+      height: auto;
+      display: block;
+    }
+
+    .prev, .next {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      width: auto;
+      padding: 16px;
+      margin-top: -22px;
+      color: white;
+      font-weight: bold;
+      font-size: 20px;
+      transition: 0.6s ease;
+      border-radius: 0 3px 3px 0;
+      user-select: none;
+      background-color: rgba(0,0,0,0.5);
+    }
+
+    .next {
+      right: 0;
+      border-radius: 3px 0 0 3px;
+    }
+
+    .prev:hover, .next:hover {
+      background-color: rgba(0,0,0,0.8);
+    }
+
+    .text {
+      color: #f2f2f2;
+      font-size: 16px;
+      padding: 12px;
+      position: absolute;
+      bottom: 0;
+      background: rgba(0,0,0,0.4);
+      width: 100%;
+      text-align: center;
+    }
+
+    .dot-container {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .dot {
+      cursor: pointer;
+      height: 12px;
+      width: 12px;
+      margin: 0 4px;
+      background-color: #bbb;
+      border-radius: 50%;
+      display: inline-block;
+      transition: background-color 0.6s ease;
+    }
+
+    .active, .dot:hover {
+      background-color: #717171;
+    }
+
+    .fade {
+      animation-name: fade;
+      animation-duration: 1.5s;
+    }
+
+    @keyframes fade {
+      from {opacity: .4} 
+      to {opacity: 1}
+    }
+  </style>
+</head>
+<body>
+
+  <div class="top-controls">
+    <button class="back-btn" onclick="history.back()" title="Go Back">⬅</button>
+  </div>
+
+  <h1 class="title">Program & Event</h1>
+  <p class="description">Join us in our special program and event. Learn about our country heritage from us!</p>
+
+  <div class="slideshow-container">
+
+    <div class="mySlides fade">
+      <img src="https://i.imgur.com/DUaB5dx.png" alt="Event 1">
+      <div class="text">Unleash your creativity in our Batik & Songket Workshop!</div>
+    </div>
+
+    <div class="mySlides fade">
+      <img src="https://i.imgur.com/czUUBbG.png" alt="Event 2">
+      <div class="text">Tradition through Time: Festivals and their Histories</div>
+    </div>
+
+    <div class="mySlides fade">
+      <img src="https://i.imgur.com/yA7gLpw.png" alt="Event 3">
+      <div class="text">What Merdeka means to Us Today</div>
+    </div>
+
+    <div class="mySlides fade">
+      <img src="https://i.imgur.com/pmQTIlS.png" alt="Event 4">
+      <div class="text">Malaysia Historical Speech Contest</div>
+    </div>
+
+    <div class="mySlides fade">
+      <img src="https://i.imgur.com/9J2lHmv.jpeg" alt="Event 5">
+      <div class="text">Timeline of Malaysia: Interactive Exhibition</div>
+    </div>
+
+    <div class="mySlides fade">
+      <img src="https://i.imgur.com/dKnJQAH.jpeg" alt="Event 6">
+      <div class="text">Young Historian Research Challenge</div>
+    </div>
+
+    <a class="prev" onclick="plusSlides(-1)">❮</a>
+    <a class="next" onclick="plusSlides(1)">❯</a>
+
+  </div>
+
+  <div class="dot-container">
+    <span class="dot" onclick="currentSlide(1)"></span> 
+    <span class="dot" onclick="currentSlide(2)"></span> 
+    <span class="dot" onclick="currentSlide(3)"></span> 
+    <span class="dot" onclick="currentSlide(4)"></span> 
+    <span class="dot" onclick="currentSlide(5)"></span> 
+    <span class="dot" onclick="currentSlide(6)"></span> 
+  </div>
+
+  <script>
+    let slideIndex = 1;
+    showSlides(slideIndex);
+
+    function plusSlides(n) {
+      showSlides(slideIndex += n);
+    }
+
+    function currentSlide(n) {
+      showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
+      let i;
+      const slides = document.getElementsByClassName("mySlides");
+      const dots = document.getElementsByClassName("dot");
+      if (n > slides.length) { slideIndex = 1 }
+      if (n < 1) { slideIndex = slides.length }
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";  
+      }
+      for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+      }
+      slides[slideIndex-1].style.display = "block";  
+      dots[slideIndex-1].className += " active";
+    }
+
+    // Optional: Auto slideshow every 6 seconds
+    setInterval(() => {
+      plusSlides(1);
+    }, 6000);
+  </script>
+
+</body>
+</html>
